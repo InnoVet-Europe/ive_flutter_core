@@ -7,12 +7,14 @@ class MultipleChoicePopup extends StatefulWidget {
     @required this.title,
     @required this.buttons,
     @required this.cancelButtonTitle,
+    @required this.cancelButtonReturnValue
     //@required this.buttonPress,
   });
 
   final String title;
   final List<Map<String, dynamic>> buttons;
   final String cancelButtonTitle;
+  final dynamic cancelButtonReturnValue;
   //final Function buttonPress;
 
   @override
@@ -80,7 +82,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
         child: Text(widget.cancelButtonTitle),
         textColor: Colors.white,
         onPressed: () {
-          Navigator.of(context).pop(-1);
+          Navigator.of(context).pop(widget.cancelButtonReturnValue);
         },
       ),
     );
