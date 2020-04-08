@@ -5,7 +5,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'package:ive_flutter_core/migrations.dart';
+import 'package:ive_flutter_core/database/migrations.dart';
 
 class DBProvider {
   static Future<bool> deleteDb(String dbName) async {

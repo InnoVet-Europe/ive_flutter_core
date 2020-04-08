@@ -2,6 +2,24 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "_fe_analyzer_shared",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "after_layout",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/after_layout-1.0.7+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "analyzer",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-0.39.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.11",
       "packageUri": "lib/",
@@ -50,6 +68,18 @@
       "languageVersion": "2.1"
     },
     {
+      "name": "csslib",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/csslib-0.16.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "dart_style",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-1.3.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/jameswhite/projects/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -62,10 +92,40 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "glob",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/glob-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.14.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "image",
       "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
+      "name": "intl_translation",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/intl_translation-0.17.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
     },
     {
       "name": "matcher",
@@ -78,6 +138,24 @@
       "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.1.8",
       "packageUri": "lib/",
       "languageVersion": "1.12"
+    },
+    {
+      "name": "node_interop",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/node_interop-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "node_io",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/node_io-1.0.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "package_config",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-1.9.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "path",
@@ -116,6 +194,12 @@
       "languageVersion": "2.4"
     },
     {
+      "name": "photo_view",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/photo_view-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/platform-2.2.1",
       "packageUri": "lib/",
@@ -124,6 +208,24 @@
     {
       "name": "plugin_platform_interface",
       "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "pub_semver",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-1.4.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "qr",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/qr-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "qr_flutter",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/qr_flutter-2.1.0+55",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -206,10 +308,22 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "watcher",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-0.9.7+14",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/xml-3.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.3"
+    },
+    {
+      "name": "yaml",
+      "rootUri": "file:///Users/jameswhite/projects/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "ive_flutter_core",
@@ -218,7 +332,7 @@
       "languageVersion": "2.6"
     }
   ],
-  "generated": "2020-04-07T06:15:45.416788Z",
+  "generated": "2020-04-08T05:43:54.938742Z",
   "generator": "pub",
   "generatorVersion": "2.7.2"
 }
