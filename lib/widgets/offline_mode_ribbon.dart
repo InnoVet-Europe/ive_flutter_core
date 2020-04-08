@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class OfflineModeRibbon extends StatelessWidget {
-  OfflineModeRibbon({this.showRibbon, this.lastSync});
+  OfflineModeRibbon({@required this.showRibbon, @required this.lastSync, @required this.ribbonImage});
 
-  bool showRibbon;
-  DateTime lastSync;
+  final bool showRibbon;
+  final DateTime lastSync;
+  final String ribbonImage;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,8 @@ class OfflineModeRibbon extends StatelessWidget {
                 }
               },
               child: Image.asset(
-                'images/icons/offline_mode.png',
+                ribbonImage,
+                //'images/icons/offline_mode.png',
                 height: 120,
                 width: 120,
               ),
