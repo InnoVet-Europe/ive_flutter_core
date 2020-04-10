@@ -111,16 +111,23 @@ class CoreUtilities {
     );
   }
 
-  static void showInSnackBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey, String value, {int durationInSeconds = 3}) {
+  static void showInSnackBar(
+    BuildContext context,
+    GlobalKey<ScaffoldState> scaffoldKey,
+    String value, {
+    int durationInSeconds = 5,
+    num fontSize = 16.0,
+    Color backgroundColor = Colors.blue,
+  }) {
     FocusScope.of(context).requestFocus(FocusNode());
     scaffoldKey.currentState?.removeCurrentSnackBar();
     scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text(
         value,
         textAlign: TextAlign.center,
-        style: const TextStyle(color: Colors.white, fontSize: 16.0, fontFamily: 'WorkSansSemiBold'),
+        style: TextStyle(color: Colors.white, fontSize: fontSize, fontFamily: 'WorkSansSemiBold'),
       ),
-      backgroundColor: Colors.blue,
+      backgroundColor: backgroundColor,
       duration: Duration(seconds: durationInSeconds),
     ));
   }
@@ -132,7 +139,7 @@ class CoreUtilities {
     return n;
   }
 
-    static Widget styleForDisabled(Widget w, {num borderRadius = 0.0}) {
+  static Widget styleForDisabled(Widget w, {num borderRadius = 0.0}) {
     return Container(
       foregroundDecoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
@@ -149,7 +156,7 @@ class CoreUtilities {
     );
   }
 
-  static Future<bool> showAlert(BuildContext context, String title, String body, String buttonText, {bool showCancelButton = false, String cancelButtonText = 'Cancel'}) async {
+  static Future<bool> showAlert(BuildContext context, String title, String body, String buttonText, {bool showCancelButton = false, String cancelButtonText = 'Cancel',TextAlign textAlign = TextAlign.justify}) async {
     return showDialog<bool>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -161,7 +168,7 @@ class CoreUtilities {
               children: <Widget>[
                 Text(
                   body,
-                  textAlign: TextAlign.justify,
+                  textAlign: textAlign,
                   style: const TextStyle(fontFamily: 'AvenirNextRegular', fontStyle: FontStyle.normal, fontSize: 16.0, height: 1.0),
                 )
               ],
