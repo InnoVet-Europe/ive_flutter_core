@@ -2,8 +2,6 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 
-import 'package:geolocator/geolocator.dart';
-
 import 'package:ive_flutter_core/util/core_utilities.dart';
 
 abstract class Enum<T> {

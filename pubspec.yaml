@@ -18,6 +18,7 @@ dependencies:
   path_provider: ^1.6.5
   photo_view: ^0.4.2
   qr_flutter: ^2.1.0+55
+  shared_preferences: ^0.5.6+3
 
 
 dev_dependencies:
