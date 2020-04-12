@@ -11,8 +11,6 @@ class BaseModel {
   Map<String,dynamic> toJson() => null;
 }
 
-enum AppDomainType {user,event,kennel}
-enum TableType { baseTable, hemUser, hemEventAdmin, hkmUser, hkmEventAdmin, hkmKennelAdmin, paymentsUser, paymentsEvent }
 
 class BaseTableHelper {
   BaseTableHelper();
@@ -23,8 +21,8 @@ class BaseTableHelper {
   final num forceRequeryInterval = 1 * 1000;
   final num cacheDuration = 365 * 3 * 86400000; // cause a force refresh of the cache every 3 years. This effectively prevents cache refreshes
 
-  String getTableName(TableType tableType) => null;
-  Future<dynamic> createTable(Database db, int version, TableType tableType) async => null;
+  String getTableName(dynamic tableType) => null;
+  Future<dynamic> createTable(Database db, int version, dynamic tableType) async => null;
   Map<String, dynamic> normalizeMap(Map<String, dynamic> inputMap) => null;
   BaseModel fromMap(Map<String, dynamic> map) => null;
 }
