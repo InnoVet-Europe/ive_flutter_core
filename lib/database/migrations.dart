@@ -4,7 +4,11 @@ import 'dart:convert';
 import 'package:sqflite/sqflite.dart';
 
 class MigrationsModel {
-  MigrationsModel({this.dbVersion, this.migrationText, this.appliedAtInt});
+  MigrationsModel({
+    this.dbVersion,
+    this.migrationText,
+    this.appliedAtInt,
+  });
 
   final int dbVersion;
   final String migrationText;
@@ -17,7 +21,11 @@ class MigrationsModel {
 
     json.decode(jsonResult).forEach(
       (dynamic jsonItem) {
-        item = MigrationsModel(dbVersion: jsonItem['dbVersion'], migrationText: jsonItem['migrationText'], appliedAtInt: jsonItem['appliedAtInt']);
+        item = MigrationsModel(
+          dbVersion: jsonItem['dbVersion'],
+          migrationText: jsonItem['migrationText'],
+          appliedAtInt: jsonItem['appliedAtInt'],
+        );
 
         items.add(item);
       },
@@ -78,8 +86,6 @@ class MigrationsTableHelper {
       return true;
     }
 
-    
-
     bool migrationsSuccessful = true;
 
     try {
@@ -115,5 +121,5 @@ class MigrationsTableHelper {
     }
 
     return migrationsSuccessful;
-  } 
+  }
 }

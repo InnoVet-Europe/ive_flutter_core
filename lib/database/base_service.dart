@@ -15,7 +15,6 @@ class BaseModel {
 class BaseTableHelper {
   BaseTableHelper();
 
-  String tableName;
   String remoteDbId;
 
   final num forceRequeryInterval = 1 * 1000;
