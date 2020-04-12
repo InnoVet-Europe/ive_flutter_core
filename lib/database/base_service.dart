@@ -165,4 +165,40 @@ class BaseService {
     print('$insertCounter $tableName records inserted, $updateCounter $tableName records updated, $deletedCounter $tableName records deleted');
     return insertCounter;
   }
+
+  Future<List<dynamic>> updateSqlTablesFrom(String jsonResults, List<BaseTableHelper> tables, Database db, dynamic appDomainType, {Function informUser}) async {
+    List<dynamic> adHocData;
+
+    if (jsonResults.startsWith('[[')) {
+      jsonResults = jsonResults.substring(1, jsonResults.length - 1);
+    }
+
+    final RegExp r = RegExp(r'\[(\{(.*?)\})\]', multiLine: true);
+    final Iterable<Match> matches = r.allMatches(jsonResults);
+    for (int i = 0; i < matches.length; i++) {
+      final String ms = matches.elementAt(i).group(0);
+
+      for (BaseTableHelper helper in tables) {
+        if (ms.startsWith('[{"${helper.remoteDbId}"')) {
+          await bulkUpdateDatabase(
+            helper,
+            helper.getTableName(appDomainType),
+            '[$ms]',
+            db,
+            informUser: informUser,
+          );
+          print('${helper.getTableName(appDomainType)}');
+        }
+      }
+
+      if (ms.startsWith(r'[{"adHocDataId"')) {
+        final List<dynamic> adHocItems = jsonDecode('$ms');
+        if ((adHocItems != null) && (adHocItems.isNotEmpty)) {
+          adHocData = adHocItems;
+        }
+        print('server messages received');
+      }
+    }
+    return adHocData;
+  }
 }
