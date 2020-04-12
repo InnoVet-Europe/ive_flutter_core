@@ -166,7 +166,7 @@ class BaseService {
     return insertCounter;
   }
 
-  Future<List<dynamic>> updateSqlTablesFrom(String jsonResults, List<BaseTableHelper> tables, Database db, dynamic appDomainType, {Function informUser}) async {
+  Future<List<dynamic>> updateSqlTablesFromJson(String jsonResults, List<BaseTableHelper> tables, Database db, dynamic appDomainType, {Function informUser}) async {
     List<dynamic> adHocData;
 
     if (jsonResults.startsWith('[[')) {
