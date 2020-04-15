@@ -178,8 +178,11 @@ class BaseService {
     for (int i = 0; i < matches.length; i++) {
       final String ms = matches.elementAt(i).group(0);
 
+      bool isProcessed = false;
+
       for (BaseTableHelper helper in tables) {
         if (ms.startsWith('[{"${helper.remoteDbId}"')) {
+          isProcessed = true;
           await bulkUpdateDatabase(
             helper,
             helper.getTableName(appDomainType),
@@ -192,11 +195,19 @@ class BaseService {
       }
 
       if (ms.startsWith(r'[{"adHocDataId"')) {
+        isProcessed = true;
         final List<dynamic> adHocItems = jsonDecode('$ms');
         if ((adHocItems != null) && (adHocItems.isNotEmpty)) {
           adHocData = adHocItems;
         }
         print('server messages received');
+      }
+
+      if (!isProcessed)
+      {
+        print('The following data was not inserted into the device DB');
+        print(ms);
+        assert(false);
       }
     }
     return adHocData;
