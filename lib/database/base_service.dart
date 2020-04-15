@@ -206,6 +206,7 @@ class BaseService {
       if (!isProcessed)
       {
         print('The following data was not inserted into the device DB');
+        print('It is required that the primary key for the table to be the first field in the JSON data. Please check the JSON data format.');
         print(ms);
         assert(false);
       }
