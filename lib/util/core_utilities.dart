@@ -17,10 +17,12 @@ class CoreUtilities {
     print((d.inMilliseconds / 1000.0).toString() + ' ($logCounter): ' + item);
   }
 
+  static const int TIME_WINDOW = 109;
+  
   static String generateToken(String userId, String procName, {String paramString = ''}) {
     final Duration difference = DateTime.now().toUtc().difference(DateTime.utc(1993, 7, 25, 15, 0, 0));
     //final int timeBlocks = (difference.inSeconds / 5760).toInt();
-    final int timeBlocks = difference.inSeconds ~/ 5760;
+    final int timeBlocks = difference.inSeconds ~/ TIME_WINDOW;
     if (paramString.isNotEmpty) {
       paramString = '#' + paramString;
     }
