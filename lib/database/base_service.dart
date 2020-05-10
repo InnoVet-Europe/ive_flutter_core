@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:ive_flutter_core/database/error_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 //import 'package:harrier_central/util/constants.dart';
@@ -154,6 +155,21 @@ class BaseService {
 
     print('$insertCounter $tableName records inserted, $updateCounter $tableName records updated, $deletedCounter $tableName records deleted');
     return insertCounter;
+  }
+
+  ErrorModel checkResultsForErrors(String responseBody)
+  {
+    ErrorModel errorObj;
+
+    final List<dynamic> results = json.decode(responseBody);
+    for (List<dynamic> subResults in results) {
+      if (subResults.isNotEmpty) {
+        if (subResults[0].containsKey('errorId')) {
+          errorObj = ErrorModel.fromJson(subResults[0]);
+        }
+      }
+    }
+    return errorObj;
   }
 
   Future<List<dynamic>> updateSqlTablesFromJson(String jsonResults, List<BaseTableHelper> tables, Database db, dynamic appDomainType, {Function informUser}) async {
