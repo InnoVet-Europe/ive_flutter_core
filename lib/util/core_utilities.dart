@@ -17,7 +17,7 @@ class CoreUtilities {
     print((d.inMilliseconds / 1000.0).toString() + ' ($logCounter): ' + item);
   }
 
-  static const int TIME_WINDOW = 109;
+  static const int TIME_WINDOW = 30;
   
   static String generateToken(String userId, String procName, {String paramString = ''}) {
     final Duration difference = DateTime.now().toUtc().difference(DateTime.utc(1993, 7, 25, 15, 0, 0));
@@ -27,7 +27,7 @@ class CoreUtilities {
       paramString = '#' + paramString;
     }
     final String accessString = '${userId.toUpperCase()}#$procName#${timeBlocks.toString()}$paramString';
-    final List<int> bytes = utf8.encode(accessString); // data being hashed
+    final List<int> bytes = utf8.encode(accessString.toUpperCase()); // data being hashed
     final Digest digest = sha256.convert(bytes);
     return '$digest'.toUpperCase();
   }
