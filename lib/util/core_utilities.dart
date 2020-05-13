@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 
 import 'package:crypto/crypto.dart';
 
-class CoreUtilities {
+class IveCoreUtilities {
   static int logCounter = 0;
 
   static void logTiming(String item, DateTime startTime) {
