@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:ive_flutter_core/models/error_model.dart';
 
 class IveDbUtilities {
-   ErrorModel checkResultsForErrors(String responseBody) {
+   static ErrorModel checkResultsForErrors(String responseBody) {
     ErrorModel errorObj;
 
     // some results have multiple result sets, others have only one
