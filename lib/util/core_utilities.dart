@@ -18,7 +18,7 @@ class IveCoreUtilities {
   }
 
   static const int TIME_WINDOW = 30;
-  
+
   static String generateToken(String userId, String procName, {String paramString = ''}) {
     final Duration difference = DateTime.now().toUtc().difference(DateTime.utc(1993, 7, 25, 15, 0, 0));
     //final int timeBlocks = (difference.inSeconds / 5760).toInt();
@@ -122,17 +122,19 @@ class IveCoreUtilities {
     num fontSize = 16.0,
     Color backgroundColor = Colors.blue,
   }) {
-    FocusScope.of(context).requestFocus(FocusNode());
-    scaffoldKey.currentState?.removeCurrentSnackBar();
-    scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text(
-        value,
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: fontSize, fontFamily: 'WorkSansSemiBold'),
-      ),
-      backgroundColor: backgroundColor,
-      duration: Duration(seconds: durationInSeconds),
-    ));
+    if ((context != null) && (scaffoldKey != null)) {
+      FocusScope.of(context).requestFocus(FocusNode());
+      scaffoldKey.currentState?.removeCurrentSnackBar();
+      scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(
+          value,
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white, fontSize: fontSize, fontFamily: 'WorkSansSemiBold'),
+        ),
+        backgroundColor: backgroundColor,
+        duration: Duration(seconds: durationInSeconds),
+      ));
+    }
   }
 
   static num unInt(num n) {
@@ -159,7 +161,7 @@ class IveCoreUtilities {
     );
   }
 
-  static Future<bool> showAlert(BuildContext context, String title, String body, String buttonText, {bool showCancelButton = false, String cancelButtonText = 'Cancel',TextAlign textAlign = TextAlign.justify}) async {
+  static Future<bool> showAlert(BuildContext context, String title, String body, String buttonText, {bool showCancelButton = false, String cancelButtonText = 'Cancel', TextAlign textAlign = TextAlign.justify}) async {
     return showDialog<bool>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -198,7 +200,6 @@ class IveCoreUtilities {
     );
   }
 }
-
 
 SharedPreferences _sharedPreferences;
 
@@ -249,8 +250,7 @@ Future<bool> setDatePref(dynamic key, DateTime value) async {
 
 DateTime getDatePref(dynamic key) {
   final int ms = _sharedPreferences.getInt(key.toString());
-  if (ms == null) 
-  {
+  if (ms == null) {
     return null;
   }
   return DateTime.fromMillisecondsSinceEpoch(ms);
@@ -263,15 +263,5 @@ Future<bool> setBoolPref(dynamic key, bool value) async {
 }
 
 bool getBoolPref(dynamic key) {
-   return _sharedPreferences.getInt(key.toString()) == 1;
+  return _sharedPreferences.getInt(key.toString()) == 1;
 }
-
-
-
-
-
-
-
-
-
-
