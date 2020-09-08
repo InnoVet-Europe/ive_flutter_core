@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -201,67 +201,67 @@ class IveCoreUtilities {
   }
 }
 
-SharedPreferences _sharedPreferences;
+// SharedPreferences _sharedPreferences;
 
-Future<void> initPrefs() async {
-  _sharedPreferences ??= await SharedPreferences.getInstance();
-}
+// Future<void> initPrefs() async {
+//   _sharedPreferences ??= await SharedPreferences.getInstance();
+// }
 
-Future<bool> clearPrefs() async {
-  _sharedPreferences ??= await SharedPreferences.getInstance();
-  return _sharedPreferences.clear();
-}
+// Future<bool> clearPrefs() async {
+//   _sharedPreferences ??= await SharedPreferences.getInstance();
+//   return _sharedPreferences.clear();
+// }
 
-// STRING
+// // STRING
 
-String getStringPref(dynamic key) {
-  return _sharedPreferences.getString(key.toString());
-}
+// String getStringPref(dynamic key) {
+//   return _sharedPreferences.getString(key.toString());
+// }
 
-Future<bool> setStringPref(dynamic key, String value) async {
-  return _sharedPreferences.setString(key.toString(), value);
-}
+// Future<bool> setStringPref(dynamic key, String value) async {
+//   return _sharedPreferences.setString(key.toString(), value);
+// }
 
-// NUM
+// // NUM
 
-num getNumPref(dynamic key) {
-  return _sharedPreferences.getDouble(key.toString());
-}
+// num getNumPref(dynamic key) {
+//   return _sharedPreferences.getDouble(key.toString());
+// }
 
-Future<bool> setNumPref(dynamic key, num value) async {
-  return _sharedPreferences.setDouble(key.toString(), value);
-}
+// Future<bool> setNumPref(dynamic key, num value) async {
+//   return _sharedPreferences.setDouble(key.toString(), value);
+// }
 
-// INT
+// // INT
 
-num getIntPref(dynamic key) {
-  return _sharedPreferences.getInt(key.toString());
-}
+// num getIntPref(dynamic key) {
+//   return _sharedPreferences.getInt(key.toString());
+// }
 
-Future<bool> setIntPref(dynamic key, int value) async {
-  return _sharedPreferences.setInt(key.toString(), value);
-}
+// Future<bool> setIntPref(dynamic key, int value) async {
+//   return _sharedPreferences.setInt(key.toString(), value);
+// }
 
-// DATE
+// // DATE
 
-Future<bool> setDatePref(dynamic key, DateTime value) async {
-  return _sharedPreferences.setInt(key.toString(), value.millisecondsSinceEpoch);
-}
+// Future<bool> setDatePref(dynamic key, DateTime value) async {
+//   return _sharedPreferences.setInt(key.toString(), value.millisecondsSinceEpoch);
+// }
 
-DateTime getDatePref(dynamic key) {
-  final int ms = _sharedPreferences.getInt(key.toString());
-  if (ms == null) {
-    return null;
-  }
-  return DateTime.fromMillisecondsSinceEpoch(ms);
-}
+// DateTime getDatePref(dynamic key) {
+//   final int ms = _sharedPreferences.getInt(key.toString());
+//   if (ms == null) {
+//     return null;
+//   }
+//   return DateTime.fromMillisecondsSinceEpoch(ms);
+// }
 
-// BOOL
+// // BOOL
 
-Future<bool> setBoolPref(dynamic key, bool value) async {
-  return _sharedPreferences.setInt(key.toString(), value == true ? 1 : 0);
-}
+// Future<bool> setBoolPref(dynamic key, bool value) async {
+//   return _sharedPreferences.setInt(key.toString(), value == true ? 1 : 0);
+// }
 
-bool getBoolPref(dynamic key) {
-  return _sharedPreferences.getInt(key.toString()) == 1;
-}
+// bool getBoolPref(dynamic key) {
+//   return _sharedPreferences.getInt(key.toString()) == 1;
+// }
