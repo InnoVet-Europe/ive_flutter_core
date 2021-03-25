@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class RotationY extends StatelessWidget {
-  const RotationY({Key key, @required this.child, this.rotationY = 0}) : super(key: key);
+  const RotationY({required Key key, required this.child, this.rotationY = 0})
+      : super(key: key);
 
   //Degrees to rads constant
   static const double degrees2Radians = math.pi / 180;
@@ -23,15 +24,16 @@ class RotationY extends StatelessWidget {
 }
 
 class AnimatedBackground extends StatelessWidget {
-  const AnimatedBackground({Key key, this.child}) : super(key: key);
+  const AnimatedBackground({required Key key, required this.child})
+      : super(key: key);
 
   final Container child;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      width: child.constraints.maxWidth,
-      height: child.constraints.maxHeight,
+      width: child.constraints?.maxWidth,
+      height: child.constraints?.maxHeight,
       duration: const Duration(milliseconds: 700),
       curve: Curves.easeOut,
       child: child,
@@ -40,8 +42,14 @@ class AnimatedBackground extends StatelessWidget {
 }
 
 class FlippableBox extends StatelessWidget {
-  const FlippableBox({Key key, this.isFlipped = false, this.front, this.back}) : super(key: key);
+  const FlippableBox(
+      {required this.key,
+      this.isFlipped = false,
+      required this.front,
+      required this.back})
+      : super(key: key);
 
+  final Key key;
   final Container front;
   final Container back;
 
@@ -52,14 +60,19 @@ class FlippableBox extends StatelessWidget {
       duration: const Duration(milliseconds: 700),
       curve: Curves.easeOut,
       tween: Tween<double>(begin: 0.0, end: isFlipped ? 180.0 : 0.0),
-      builder: (BuildContext context, double value, Widget child) {
+      builder: (BuildContext context, double value, Widget? child) {
         final Container content = value >= 90 ? back : front;
         final Container offScreenContent = value >= 90 ? front : back;
         return Stack(
           children: <Widget>[
             RotationY(
+              key: key,
               rotationY: value,
-              child: RotationY(rotationY: value > 90 ? 180 : 0, child: content),
+              child: RotationY(
+                key: key,
+                rotationY: value > 90 ? 180 : 0,
+                child: content,
+              ),
             ),
             // this ensures that we keep the original (front) widget in the tree so we preserve
             // it's state while it's out of view
