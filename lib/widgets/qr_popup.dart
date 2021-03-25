@@ -6,9 +6,9 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 class QrPopup extends StatefulWidget {
   const QrPopup({
-    @required this.dialogTitle,
-    @required this.qrText,
-    // @required this.valueChanged
+    required this.dialogTitle,
+    required this.qrText,
+    // required this.valueChanged
   });
 
   final String dialogTitle;
@@ -63,48 +63,45 @@ String qrMediumJson = '''
 
 class _QrPopupState extends State<QrPopup> {
   int selectedValue = 1;
-  num otherAmount;
-  int otherTransType;
-
-  // @override
-  // void initState() {
-
-  //   super.initState();
-  // }
-
 
   @override
   Widget build(BuildContext context) {
     final List<dynamic> items = json.decode(qrMediumJson);
     int qrVersion = 15;
 
-    for (int i = 0; i < items.length; i++)
-    {
+    for (int i = 0; i < items.length; i++) {
       final int charLength = items[i]['character'];
-      if (charLength > widget.qrText.length)
-      {
+      if (charLength > widget.qrText.length) {
         qrVersion = items[i]['version'];
         break;
       }
     }
 
     return AlertDialog(
-      title: Text(widget.dialogTitle, textAlign: TextAlign.center,),
-      content:  Container(
-          height: 250,
-          width: 250,
-          child: QrImage(backgroundColor: Colors.white, padding: const EdgeInsets.all(10.0), data: widget.qrText, version: qrVersion+2, errorCorrectionLevel: QrErrorCorrectLevel.M),
-        ),
-      
+      title: Text(
+        widget.dialogTitle,
+        textAlign: TextAlign.center,
+      ),
+      content: Container(
+        height: 250,
+        width: 250,
+        child: QrImage(
+            backgroundColor: Colors.white,
+            padding: const EdgeInsets.all(10.0),
+            data: widget.qrText,
+            version: qrVersion + 2,
+            errorCorrectionLevel: QrErrorCorrectLevel.M),
+      ),
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.only(right: 0.0),
           child: Container(
             width: 100.0,
-            child: RaisedButton(
-              color: Colors.red,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+                  textStyle: TextStyle(color: Colors.white)),
               child: const Text('Done'),
-              textColor: Colors.white,
               onPressed: () {
                 Navigator.of(context).pop();
               },

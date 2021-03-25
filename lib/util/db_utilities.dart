@@ -1,15 +1,14 @@
-
 import 'dart:convert';
 
 import 'package:ive_flutter_core/models/error_model.dart';
 
 class IveDbUtilities {
-   static ErrorModel checkResultsForErrors(String responseBody) {
-    ErrorModel errorObj;
+  // returns null if there are no errors
+  static ErrorModel? checkResultsForErrors(String responseBody) {
+    ErrorModel? errorObj;
 
     // some results have multiple result sets, others have only one
-    if (responseBody.startsWith('[['))
-    {
+    if (responseBody.startsWith('[[')) {
       // in this case, there are multiple result sets we need to check for errors
       final List<dynamic> results = json.decode(responseBody);
       for (List<dynamic> subResults in results) {
@@ -29,9 +28,3 @@ class IveDbUtilities {
     return errorObj;
   }
 }
-
-
-
-
-
-

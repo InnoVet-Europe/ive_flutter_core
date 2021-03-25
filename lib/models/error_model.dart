@@ -1,33 +1,20 @@
+// package imports
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-
-import 'package:json_annotation/json_annotation.dart';
-
+part 'error_model.freezed.dart';
 part 'error_model.g.dart';
 
-@JsonSerializable(fieldRename: FieldRename.none)
-class ErrorModel {
-  ErrorModel({
-    this.errorId,
-    this.errorType,
-    this.errorTitle,
-    this.errorUserMessage,
-    this.debugMessage,
-    this.errorProc
-    
-  });
+@freezed
+class ErrorModel with _$ErrorModel {
+  factory ErrorModel(
+      {required String errorId,
+      required int errorType,
+      required String errorTitle,
+      required String errorUserMessage,
+      required String debugMessage,
+      required String errorProc}) = _ErrorModel;
 
-  factory ErrorModel.fromJson(Map<String, dynamic> json) => _$ErrorModelFromJson(json);
-
-  @override
-  Map<String, dynamic> toJson() => _$ErrorModelToJson(this);
-
-  final String errorId;
-  final int errorType;
-  final String errorTitle;
-  final String errorUserMessage;
-  final String debugMessage;
-  final String errorProc;
+  factory ErrorModel.fromJson(Map<String, dynamic> json) =>
+      _$ErrorModelFromJson(json);
 }
-
-
-

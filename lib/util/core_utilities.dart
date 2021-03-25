@@ -19,55 +19,59 @@ class IveCoreUtilities {
 
   static const int TIME_WINDOW = 30;
 
-  static String generateToken(String userId, String procName, {String paramString = ''}) {
-    final Duration difference = DateTime.now().toUtc().difference(DateTime.utc(1993, 7, 25, 15, 0, 0));
+  static String generateToken(String userId, String procName,
+      {String paramString = ''}) {
+    final Duration difference =
+        DateTime.now().toUtc().difference(DateTime.utc(1993, 7, 25, 15, 0, 0));
     //final int timeBlocks = (difference.inSeconds / 5760).toInt();
     final int timeBlocks = difference.inSeconds ~/ TIME_WINDOW;
     if (paramString.isNotEmpty) {
       paramString = '#' + paramString;
     }
-    final String accessString = '${userId.toUpperCase()}#$procName#${timeBlocks.toString()}$paramString';
-    final List<int> bytes = utf8.encode(accessString.toUpperCase()); // data being hashed
+    final String accessString =
+        '${userId.toUpperCase()}#$procName#${timeBlocks.toString()}$paramString';
+    final List<int> bytes =
+        utf8.encode(accessString.toUpperCase()); // data being hashed
     final Digest digest = sha256.convert(bytes);
     return '$digest'.toUpperCase();
   }
 
-  static String getFormattedMoney(num amount, num decimalPlaces, String currencySymbol) {
+  static String getFormattedMoney(
+      num amount, num decimalPlaces, String currencySymbol) {
     String finalStr = '';
-    if (amount != null) {
-      String formatDecimals = '#####0.00';
-      switch (decimalPlaces) {
-        case 0:
-          formatDecimals = '#####0';
-          break;
-        case 1:
-          formatDecimals = '#####0.0';
-          break;
-        case 2:
-          formatDecimals = '#####0.00';
-          break;
-        case 3:
-          formatDecimals = '#####0.000';
-          break;
-        case 4:
-          formatDecimals = '#####0.0000';
-          break;
-        default:
-          formatDecimals = '#####0.00';
-          break;
-      }
-
-      final String amountStr = NumberFormat(formatDecimals).format(amount);
-
-      finalStr = currencySymbol.replaceAll('^', amountStr);
+    String formatDecimals = '#####0.00';
+    switch (decimalPlaces) {
+      case 0:
+        formatDecimals = '#####0';
+        break;
+      case 1:
+        formatDecimals = '#####0.0';
+        break;
+      case 2:
+        formatDecimals = '#####0.00';
+        break;
+      case 3:
+        formatDecimals = '#####0.000';
+        break;
+      case 4:
+        formatDecimals = '#####0.0000';
+        break;
+      default:
+        formatDecimals = '#####0.00';
+        break;
     }
+
+    final String amountStr = NumberFormat(formatDecimals).format(amount);
+
+    finalStr = currencySymbol.replaceAll('^', amountStr);
 
     return finalStr;
   }
 
   static Widget elegantDivider(String text, num topPadding, num bottomPadding) {
     return Padding(
-      padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
+      padding: EdgeInsets.only(
+          top: topPadding.toDouble(), bottom: bottomPadding.toDouble()),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -91,7 +95,10 @@ class IveCoreUtilities {
             child: Text(
               text,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white, fontSize: 16.0, fontFamily: 'WorkSansMedium'),
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontFamily: 'WorkSansMedium'),
             ),
           ),
           Container(
@@ -122,19 +129,20 @@ class IveCoreUtilities {
     num fontSize = 16.0,
     Color backgroundColor = Colors.blue,
   }) {
-    if ((context != null) && (scaffoldKey != null)) {
-      FocusScope.of(context).requestFocus(FocusNode());
-      scaffoldKey.currentState?.removeCurrentSnackBar();
-      scaffoldKey.currentState.showSnackBar(SnackBar(
-        content: Text(
-          value,
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.white, fontSize: fontSize, fontFamily: 'WorkSansSemiBold'),
-        ),
-        backgroundColor: backgroundColor,
-        duration: Duration(seconds: durationInSeconds),
-      ));
-    }
+    FocusScope.of(context).requestFocus(FocusNode());
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(
+        value,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: fontSize.toDouble(),
+            fontFamily: 'WorkSansSemiBold'),
+      ),
+      backgroundColor: backgroundColor,
+      duration: Duration(seconds: durationInSeconds),
+    ));
   }
 
   static num unInt(num n) {
@@ -147,7 +155,7 @@ class IveCoreUtilities {
   static Widget styleForDisabled(Widget w, {num borderRadius = 0.0}) {
     return Container(
       foregroundDecoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(borderRadius.toDouble()),
         color: Colors.grey,
         backgroundBlendMode: BlendMode.lighten,
       ),
@@ -161,7 +169,11 @@ class IveCoreUtilities {
     );
   }
 
-  static Future<bool> showAlert(BuildContext context, String title, String body, String buttonText, {bool showCancelButton = false, String cancelButtonText = 'Cancel', TextAlign textAlign = TextAlign.justify}) async {
+  static Future<bool?> showAlert(
+      BuildContext context, String title, String body, String buttonText,
+      {bool showCancelButton = false,
+      String cancelButtonText = 'Cancel',
+      TextAlign textAlign = TextAlign.justify}) async {
     return showDialog<bool>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -174,21 +186,25 @@ class IveCoreUtilities {
                 Text(
                   body,
                   textAlign: textAlign,
-                  style: const TextStyle(fontFamily: 'AvenirNextRegular', fontStyle: FontStyle.normal, fontSize: 16.0, height: 1.0),
+                  style: const TextStyle(
+                      fontFamily: 'AvenirNextRegular',
+                      fontStyle: FontStyle.normal,
+                      fontSize: 16.0,
+                      height: 1.0),
                 )
               ],
             ),
           ),
           actions: <Widget>[
             showCancelButton == true
-                ? FlatButton(
+                ? TextButton(
                     child: Text(cancelButtonText),
                     onPressed: () {
                       Navigator.of(context).pop(false);
                     },
                   )
                 : Container(),
-            FlatButton(
+            TextButton(
               child: Text(buttonText),
               onPressed: () {
                 Navigator.of(context).pop(true);

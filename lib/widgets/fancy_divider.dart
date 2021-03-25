@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class FancyDivider extends StatelessWidget {
-  const FancyDivider({@required this.innerColor, this.useTextOr = false, this.topMargin = 0.0, this.bottomMargin = 0.0});
+  const FancyDivider(
+      {required this.innerColor,
+      this.useTextOr = false,
+      this.topMargin = 0.0,
+      this.bottomMargin = 0.0});
 
   final Color innerColor;
   final bool useTextOr;
@@ -10,9 +14,9 @@ class FancyDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Container(
-      margin: EdgeInsets.only(top:topMargin,bottom:bottomMargin),
+    return Container(
+      margin: EdgeInsets.only(
+          top: topMargin.toDouble(), bottom: bottomMargin.toDouble()),
       child: CustomPaint(
         painter: ShapePainter(color: innerColor, useTextOr: useTextOr),
         child: Row(
@@ -34,7 +38,7 @@ class FancyDivider extends StatelessWidget {
 }
 
 class ShapePainter extends CustomPainter {
-  const ShapePainter({@required this.color, this.useTextOr});
+  const ShapePainter({required this.color, required this.useTextOr});
 
   final Color color;
   final bool useTextOr;
@@ -69,7 +73,7 @@ class ShapePainter extends CustomPainter {
 
     path.moveTo(
         (size.width / 2.0) - dividerGap, size.height - dividerHeight + yOffset);
-    path.lineTo(dividerInset, size.height + yOffset);
+    path.lineTo(dividerInset.toDouble(), size.height + yOffset);
     path.lineTo(
         (size.width / 2.0) - dividerGap, size.height + dividerHeight + yOffset);
     path.lineTo(
@@ -85,7 +89,7 @@ class ShapePainter extends CustomPainter {
       // center of the canvas is (x,y) => (width/2, height/2)
       final Offset center = Offset(size.width / 2, (size.height / 2) + yOffset);
       // draw the circle with center having radius 75.0
-      canvas.drawCircle(center, ballSize, paint);
+      canvas.drawCircle(center, ballSize.toDouble(), paint);
     }
   }
 
