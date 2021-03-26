@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class FancyDivider extends StatelessWidget {
   const FancyDivider(
-      {required this.innerColor,
+      {required Key key,
+      required this.innerColor,
       this.useTextOr = false,
       this.topMargin = 0.0,
-      this.bottomMargin = 0.0});
+      this.bottomMargin = 0.0})
+      : super(key: key);
 
   final Color innerColor;
   final bool useTextOr;
@@ -22,14 +24,15 @@ class FancyDivider extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            useTextOr
-                ? const Text('or',
-                    style: TextStyle(
-                        fontFamily: 'AvenirNextDemiBold',
-                        fontStyle: FontStyle.normal,
-                        fontSize: 18.0,
-                        color: Colors.white))
-                : Container(),
+            if (useTextOr)
+              const Text('or',
+                  style: TextStyle(
+                      fontFamily: 'AvenirNextDemiBold',
+                      fontStyle: FontStyle.normal,
+                      fontSize: 18.0,
+                      color: Colors.white))
+            else
+              Container(),
           ],
         ),
       ),

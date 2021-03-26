@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 
 class MultipleChoicePopup extends StatefulWidget {
   const MultipleChoicePopup(
-      {required this.title,
+      {required Key key,
+      required this.title,
       required this.buttons,
       required this.cancelButtonTitle,
       required this.cancelButtonReturnValue
       //required this.buttonPress,
-      });
+      })
+      : super(key: key);
 
   final String title;
   final List<Map<String, dynamic>> buttons;
@@ -38,7 +40,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
   List<Widget> getButtons() {
     final List<Widget> buttons = <Widget>[];
 
-    for (Map<String, dynamic> btnDef in widget.buttons) {
+    for (final Map<String, dynamic> btnDef in widget.buttons) {
       if (btnDef['title'].toString().isEmpty) {
         continue;
       }
@@ -57,7 +59,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
                 ),
                 Stack(
                     alignment: AlignmentDirectional.center,
-                    children: btnDef['icon']),
+                    children: btnDef['icon'] as List<Widget>),
                 Flexible(
                   child: Padding(
                     padding: const EdgeInsets.only(
@@ -86,10 +88,11 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
       buttons.add(const SizedBox(height: 10.0));
     }
     buttons.add(
-      FlatButton(
-        color: Colors.red,
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            primary: Colors.red,
+            textStyle: const TextStyle(color: Colors.white)),
         child: Text(widget.cancelButtonTitle),
-        textColor: Colors.white,
         onPressed: () {
           Navigator.of(context).pop(widget.cancelButtonReturnValue);
         },

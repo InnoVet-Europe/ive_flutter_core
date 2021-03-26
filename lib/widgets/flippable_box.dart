@@ -43,13 +43,12 @@ class AnimatedBackground extends StatelessWidget {
 
 class FlippableBox extends StatelessWidget {
   const FlippableBox(
-      {required this.key,
+      {required Key key,
       this.isFlipped = false,
       required this.front,
       required this.back})
       : super(key: key);
 
-  final Key key;
   final Container front;
   final Container back;
 
@@ -66,17 +65,18 @@ class FlippableBox extends StatelessWidget {
         return Stack(
           children: <Widget>[
             RotationY(
-              key: key,
+              key:
+                  key!, // NOTE: Not sure why I have to force the non-nullability here, but it's raising an error otherwise (same for below)
               rotationY: value,
               child: RotationY(
-                key: key,
+                key: key!,
                 rotationY: value > 90 ? 180 : 0,
                 child: content,
               ),
             ),
             // this ensures that we keep the original (front) widget in the tree so we preserve
             // it's state while it's out of view
-            Container(
+            SizedBox(
               child: offScreenContent,
               width: 0.0,
               height: 0.0,

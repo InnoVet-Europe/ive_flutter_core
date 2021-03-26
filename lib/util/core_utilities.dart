@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 
 import 'package:crypto/crypto.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class IveCoreUtilities {
   static int logCounter = 0;
 
@@ -196,14 +197,15 @@ class IveCoreUtilities {
             ),
           ),
           actions: <Widget>[
-            showCancelButton == true
-                ? TextButton(
-                    child: Text(cancelButtonText),
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                  )
-                : Container(),
+            if (showCancelButton)
+              TextButton(
+                child: Text(cancelButtonText),
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+              )
+            else
+              Container(),
             TextButton(
               child: Text(buttonText),
               onPressed: () {

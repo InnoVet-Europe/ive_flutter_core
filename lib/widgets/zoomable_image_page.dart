@@ -6,12 +6,13 @@ import 'package:photo_view/photo_view.dart';
 
 class ZoomableImagePage extends StatelessWidget {
   const ZoomableImagePage({
+    required Key key,
     this.image,
     required this.pageTitle,
     required this.imageUrl,
     required this.appBarBackgroundColor,
     required this.background,
-  });
+  }) : super(key: key);
 
   final platform.File? image;
   final String pageTitle;

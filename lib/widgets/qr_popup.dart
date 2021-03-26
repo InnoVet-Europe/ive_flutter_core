@@ -6,10 +6,11 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 class QrPopup extends StatefulWidget {
   const QrPopup({
+    required Key key,
     required this.dialogTitle,
     required this.qrText,
     // required this.valueChanged
-  });
+  }) : super(key: key);
 
   final String dialogTitle;
   final String qrText;
@@ -66,13 +67,13 @@ class _QrPopupState extends State<QrPopup> {
 
   @override
   Widget build(BuildContext context) {
-    final List<dynamic> items = json.decode(qrMediumJson);
+    final List<dynamic> items = json.decode(qrMediumJson) as List<dynamic>;
     int qrVersion = 15;
 
     for (int i = 0; i < items.length; i++) {
-      final int charLength = items[i]['character'];
+      final int charLength = items[i]['character'] as int;
       if (charLength > widget.qrText.length) {
-        qrVersion = items[i]['version'];
+        qrVersion = items[i]['version'] as int;
         break;
       }
     }
@@ -82,7 +83,7 @@ class _QrPopupState extends State<QrPopup> {
         widget.dialogTitle,
         textAlign: TextAlign.center,
       ),
-      content: Container(
+      content: SizedBox(
         height: 250,
         width: 250,
         child: QrImage(
@@ -95,12 +96,12 @@ class _QrPopupState extends State<QrPopup> {
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.only(right: 0.0),
-          child: Container(
+          child: SizedBox(
             width: 100.0,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   primary: Colors.red,
-                  textStyle: TextStyle(color: Colors.white)),
+                  textStyle: const TextStyle(color: Colors.white)),
               child: const Text('Done'),
               onPressed: () {
                 Navigator.of(context).pop();
