@@ -1,11 +1,10 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class RotationY extends StatelessWidget {
-  const RotationY({required Key key, required this.child, this.rotationY = 0})
-      : super(key: key);
+  const RotationY({required Key key, required this.child, this.rotationY = 0}) : super(key: key);
 
   //Degrees to rads constant
   static const double degrees2Radians = math.pi / 180;
@@ -24,8 +23,7 @@ class RotationY extends StatelessWidget {
 }
 
 class AnimatedBackground extends StatelessWidget {
-  const AnimatedBackground({required Key key, required this.child})
-      : super(key: key);
+  const AnimatedBackground({required Key key, required this.child}) : super(key: key);
 
   final Container child;
 
@@ -42,12 +40,7 @@ class AnimatedBackground extends StatelessWidget {
 }
 
 class FlippableBox extends StatelessWidget {
-  const FlippableBox(
-      {required Key key,
-      this.isFlipped = false,
-      required this.front,
-      required this.back})
-      : super(key: key);
+  const FlippableBox({required Key key, this.isFlipped = false, required this.front, required this.back}) : super(key: key);
 
   final Container front;
   final Container back;
@@ -65,8 +58,7 @@ class FlippableBox extends StatelessWidget {
         return Stack(
           children: <Widget>[
             RotationY(
-              key:
-                  key!, // NOTE: Not sure why I have to force the non-nullability here, but it's raising an error otherwise (same for below)
+              key: key!, // NOTE: Not sure why I have to force the non-nullability here, but it's raising an error otherwise (same for below)
               rotationY: value,
               child: RotationY(
                 key: key!,

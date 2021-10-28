@@ -13,9 +13,7 @@ class HcCircularProgressIndicator extends StatelessWidget {
         itemBuilder: (_, int index) {
           return DecoratedBox(
             decoration: BoxDecoration(
-              color: index.isEven
-                  ? Colors.grey[400]
-                  : Theme.of(context).accentColor,
+              color: index.isEven ? Colors.grey[400] : Theme.of(context).colorScheme.secondary,
             ),
           );
         },

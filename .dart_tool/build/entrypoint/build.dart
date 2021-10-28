@@ -1,10 +1,4 @@
-// Ensure that the build script itself is not opted in to null safety,
-// instead of taking the language version from the current package.
-//
-// @dart=2.9
-//
 // ignore_for_file: directives_ordering
-
 import 'package:build_runner_core/build_runner_core.dart' as _i1;
 import 'package:freezed/builder.dart' as _i2;
 import 'package:json_serializable/builder.dart' as _i3;
@@ -25,7 +19,7 @@ final _builders = <_i1.BuilderApplication>[
       hideOutput: false, appliesBuilders: const [r'source_gen:part_cleanup']),
   _i1.applyPostProcess(r'source_gen:part_cleanup', _i4.partCleanup)
 ];
-void main(List<String> args, [_i5.SendPort sendPort]) async {
+void main(List<String> args, [_i5.SendPort? sendPort]) async {
   var result = await _i6.run(args, _builders);
   sendPort?.send(result);
   _i7.exitCode = result;
