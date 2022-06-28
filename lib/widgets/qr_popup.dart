@@ -86,12 +86,7 @@ class _QrPopupState extends State<QrPopup> {
       content: SizedBox(
         height: 250,
         width: 250,
-        child: QrImage(
-            backgroundColor: Colors.white,
-            padding: const EdgeInsets.all(10.0),
-            data: widget.qrText,
-            version: qrVersion + 2,
-            errorCorrectionLevel: QrErrorCorrectLevel.M),
+        child: QrImage(backgroundColor: Colors.white, padding: const EdgeInsets.all(10.0), data: widget.qrText, version: qrVersion + 2, errorCorrectionLevel: QrErrorCorrectLevel.M),
       ),
       actions: <Widget>[
         Padding(
@@ -99,9 +94,7 @@ class _QrPopupState extends State<QrPopup> {
           child: SizedBox(
             width: 100.0,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
-                  textStyle: const TextStyle(color: Colors.white)),
+              style: ElevatedButton.styleFrom(primary: Colors.red, textStyle: const TextStyle(color: Colors.white)),
               child: const Text('Done'),
               onPressed: () {
                 Navigator.of(context).pop();
