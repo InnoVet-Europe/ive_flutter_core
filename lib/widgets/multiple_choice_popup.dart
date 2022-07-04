@@ -42,6 +42,8 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
         double height = 1.0;
         double thickness = 1.0;
         double indent = 0.0;
+        double paddingTop = 0.0;
+        double paddingBottom = 0.0;
 
         if (btnDef.containsKey('indent') && btnDef['indent'] is double) {
           indent = btnDef['indent'] as double;
@@ -54,12 +56,23 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
         if (btnDef.containsKey('thickness') && btnDef['thickness'] is double) {
           thickness = btnDef['thickness'] as double;
         }
-        final Divider d = Divider(
-          color: Colors.black,
-          height: height,
-          thickness: thickness,
-          indent: indent,
-          endIndent: indent,
+
+        if (btnDef.containsKey('paddingTop') && btnDef['paddingTop'] is double) {
+          paddingTop = btnDef['paddingTop'] as double;
+        }
+
+        if (btnDef.containsKey('paddingBottom') && btnDef['paddingBottom'] is double) {
+          paddingBottom = btnDef['paddingBottom'] as double;
+        }
+        final Widget d = Padding(
+          padding: EdgeInsets.only(top: paddingTop, bottom: paddingBottom),
+          child: Divider(
+            color: Colors.black,
+            height: height,
+            thickness: thickness,
+            indent: indent,
+            endIndent: indent,
+          ),
         );
         buttons.add(d);
         buttons.add(const SizedBox(height: 10.0));
