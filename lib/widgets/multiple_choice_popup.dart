@@ -39,7 +39,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
         continue;
       }
       if (btnDef['returnValue'] == null) {
-        double height = 5.0;
+        double height = 1.0;
         double thickness = 1.0;
         double indent = 0.0;
 
@@ -62,6 +62,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
           endIndent: indent,
         );
         buttons.add(d);
+        buttons.add(const SizedBox(height: 10.0));
         continue;
       }
       final Widget w = Row(children: <Widget>[
