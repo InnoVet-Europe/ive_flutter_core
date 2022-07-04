@@ -62,6 +62,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
           endIndent: indent,
         );
         buttons.add(d);
+        continue;
       }
       final Widget w = Row(children: <Widget>[
         Expanded(
