@@ -3,15 +3,15 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/jameswhite/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-40.0.0",
+      "rootUri": "file:///Users/jameswhite/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-41.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/jameswhite/.pub-cache/hosted/pub.dartlang.org/analyzer-4.1.0",
+      "rootUri": "file:///Users/jameswhite/.pub-cache/hosted/pub.dartlang.org/analyzer-4.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "2.17"
     },
     {
       "name": "args",
@@ -404,7 +404,7 @@
       "languageVersion": "2.14"
     }
   ],
-  "generated": "2022-06-28T11:15:19.629092Z",
+  "generated": "2022-07-04T15:17:19.391708Z",
   "generator": "pub",
   "generatorVersion": "2.17.5"
 }

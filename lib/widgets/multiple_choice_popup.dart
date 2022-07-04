@@ -3,12 +3,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 
 class MultipleChoicePopup extends StatefulWidget {
-  const MultipleChoicePopup(
-      {required Key key,
-      required this.title,
-      required this.buttons,
-      required this.cancelButtonTitle,
-      required this.cancelButtonReturnValue
+  const MultipleChoicePopup({required Key key, required this.title, required this.buttons, required this.cancelButtonTitle, required this.cancelButtonReturnValue
       //required this.buttonPress,
       })
       : super(key: key);
@@ -25,8 +20,7 @@ class MultipleChoicePopup extends StatefulWidget {
 
 class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
   final FocusNode myFocusNodeFirstName = FocusNode();
-  TextEditingController followKennelAmountTextController =
-      TextEditingController();
+  TextEditingController followKennelAmountTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +38,31 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
       if (btnDef['title'].toString().isEmpty) {
         continue;
       }
+      if (btnDef['returnValue'] == null) {
+        double height = 5.0;
+        double thickness = 1.0;
+        double indent = 0.0;
+
+        if (btnDef.containsKey('indent') && btnDef['indent'] is double) {
+          indent = btnDef['indent'] as double;
+        }
+
+        if (btnDef.containsKey('height') && btnDef['height'] is double) {
+          height = btnDef['height'] as double;
+        }
+
+        if (btnDef.containsKey('thickness') && btnDef['thickness'] is double) {
+          thickness = btnDef['thickness'] as double;
+        }
+        final Divider d = Divider(
+          color: Colors.black,
+          height: height,
+          thickness: thickness,
+          indent: indent,
+          endIndent: indent,
+        );
+        buttons.add(d);
+      }
       final Widget w = Row(children: <Widget>[
         Expanded(
           child: GestureDetector(
@@ -57,23 +76,15 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
                 const SizedBox(
                   width: 8.0,
                 ),
-                Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: btnDef['icon'] as List<Widget>),
+                Stack(alignment: AlignmentDirectional.center, children: btnDef['icon'] as List<Widget>),
                 Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 8.0, top: 16.0, bottom: 10.0),
+                    padding: const EdgeInsets.only(left: 8.0, top: 16.0, bottom: 10.0),
                     child: Text(
                       btnDef['title'].toString(),
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          fontFamily: 'AvenirNextMedium',
-                          fontStyle: FontStyle.normal,
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          height: 0.8),
+                      style: const TextStyle(fontFamily: 'AvenirNextMedium', fontStyle: FontStyle.normal, color: Colors.white, fontSize: 16.0, height: 0.8),
                     ),
                   ),
                 ),
@@ -89,9 +100,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
     }
     buttons.add(
       ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            primary: Colors.red,
-            textStyle: const TextStyle(color: Colors.white)),
+        style: ElevatedButton.styleFrom(primary: Colors.red, textStyle: const TextStyle(color: Colors.white)),
         child: Text(widget.cancelButtonTitle),
         onPressed: () {
           Navigator.of(context).pop(widget.cancelButtonReturnValue);
