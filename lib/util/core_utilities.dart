@@ -155,8 +155,15 @@ class IveCoreUtilities {
     );
   }
 
-  static Future<bool?> showAlert(BuildContext context, String title, String body, String buttonText,
-      {bool showCancelButton = false, String cancelButtonText = 'Cancel', TextAlign textAlign = TextAlign.justify}) async {
+  static Future<bool?> showAlert(
+    BuildContext context,
+    String title,
+    String body,
+    String buttonText, {
+    bool showCancelButton = false,
+    String cancelButtonText = 'Cancel',
+    TextAlign textAlign = TextAlign.justify,
+  }) async {
     return showDialog<bool>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -167,7 +174,7 @@ class IveCoreUtilities {
             child: ListBody(
               children: <Widget>[
                 Text(
-                  body,
+                  body.replaceAll('~', '\r\n'),
                   textAlign: textAlign,
                   style: const TextStyle(fontFamily: 'AvenirNextRegular', fontStyle: FontStyle.normal, fontSize: 16.0, height: 1.0),
                 )
