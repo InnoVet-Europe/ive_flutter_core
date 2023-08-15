@@ -86,7 +86,13 @@ class _QrPopupState extends State<QrPopup> {
       content: SizedBox(
         height: 250,
         width: 250,
-        child: QrImage(backgroundColor: Colors.white, padding: const EdgeInsets.all(10.0), data: widget.qrText, version: qrVersion + 2, errorCorrectionLevel: QrErrorCorrectLevel.M),
+        child: QrImageView(
+          backgroundColor: Colors.white,
+          padding: const EdgeInsets.all(10.0),
+          data: widget.qrText,
+          version: qrVersion + 2,
+          errorCorrectionLevel: QrErrorCorrectLevel.M,
+        ),
       ),
       actions: <Widget>[
         Padding(
