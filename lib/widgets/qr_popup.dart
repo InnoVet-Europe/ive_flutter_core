@@ -100,7 +100,7 @@ class _QrPopupState extends State<QrPopup> {
           child: SizedBox(
             width: 100.0,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(primary: Colors.red, textStyle: const TextStyle(color: Colors.white)),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red, textStyle: const TextStyle(color: Colors.white)),
               child: const Text('Done'),
               onPressed: () {
                 Navigator.of(context).pop();

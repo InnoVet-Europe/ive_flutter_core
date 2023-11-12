@@ -115,7 +115,7 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
     }
     buttons.add(
       ElevatedButton(
-        style: ElevatedButton.styleFrom(primary: Colors.red, textStyle: const TextStyle(color: Colors.white)),
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.red, textStyle: const TextStyle(color: Colors.white)),
         child: Text(widget.cancelButtonTitle),
         onPressed: () {
           Navigator.of(context).pop(widget.cancelButtonReturnValue);
