@@ -87,9 +87,9 @@ class _QrPopupState extends State<QrPopup> {
         height: 250,
         width: 250,
         child: QrImageView(
+          data: widget.qrText,
           backgroundColor: Colors.white,
           padding: const EdgeInsets.all(10.0),
-          data: widget.qrText,
           version: qrVersion + 2,
           errorCorrectionLevel: QrErrorCorrectLevel.M,
         ),
