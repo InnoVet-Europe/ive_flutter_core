@@ -9,7 +9,7 @@
     },
     {
       "name": "_macros",
-      "rootUri": "file:///Users/jameswhite/Downloads/flutter/bin/cache/dart-sdk/pkg/_macros",
+      "rootUri": "file:///Users/jameswhite/fvm/versions/3.7.12/bin/cache/dart-sdk/pkg/_macros",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -129,7 +129,7 @@
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/jameswhite/.pub-cache/hosted/pub.dev/dart_style-2.3.6",
+      "rootUri": "file:///Users/jameswhite/.pub-cache/hosted/pub.dev/dart_style-2.3.7",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -147,7 +147,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/jameswhite/Downloads/flutter/packages/flutter",
+      "rootUri": "file:///Users/jameswhite/fvm/versions/3.7.12/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -327,7 +327,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/jameswhite/Downloads/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/jameswhite/fvm/versions/3.7.12/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -440,10 +440,10 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-08-30T20:33:35.758205Z",
+  "generated": "2024-09-13T17:43:28.633582Z",
   "generator": "pub",
-  "generatorVersion": "3.5.1",
-  "flutterRoot": "file:///Users/jameswhite/Downloads/flutter",
-  "flutterVersion": "3.24.1",
+  "generatorVersion": "3.5.3",
+  "flutterRoot": "file:///Users/jameswhite/fvm/versions/3.7.12",
+  "flutterVersion": "3.24.3",
   "pubCache": "file:///Users/jameswhite/.pub-cache"
 }
