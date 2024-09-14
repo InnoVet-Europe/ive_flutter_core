@@ -20,7 +20,7 @@ class HcCircularProgressIndicator extends StatelessWidget {
         itemBuilder: (_, int index) {
           return DecoratedBox(
             decoration: BoxDecoration(
-              color: index.isEven ? (color1 ?? Colors.blue.shade500) : (color2 ?? Colors.grey.shade500),
+              color: index.isEven ? (color1 ?? Colors.blue.shade700) : (color2 ?? Colors.grey.shade400),
             ),
           );
         },
