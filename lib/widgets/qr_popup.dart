@@ -101,7 +101,13 @@ class _QrPopupState extends State<QrPopup> {
             width: 100.0,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red, textStyle: const TextStyle(color: Colors.white)),
-              child: const Text('Done'),
+              child: const Text('Done',
+                  style: TextStyle(
+                    fontFamily: 'AvenirNextDemiBold',
+                    fontStyle: FontStyle.normal,
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  )),
               onPressed: () {
                 Navigator.of(context).pop();
               },

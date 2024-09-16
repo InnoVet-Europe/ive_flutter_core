@@ -1,6 +1,7 @@
   
 name: ive_flutter_core
 description: Core assets for InnoVet Europe Flutter projects
+# version: 1.2.6c
 version: 1.2.6
 homepage: https://www.harriercentral.com/
 publish_to: none
@@ -27,4 +28,83 @@ dev_dependencies:
   build_runner: ^2.4.9
   freezed: ^2.5.2
   json_serializable: ^6.8.0
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  
+  uses-material-design: true
+
+  fonts:
+    - family: AvenirNextHeavy
+      fonts:
+        - asset: fonts/AvenirNext-Heavy.ttf
+        - asset: fonts/AvenirNext-HeavyItalic.ttf
+          style: italic
+
+    - family: AvenirNextBold
+      fonts:
+        - asset: fonts/AvenirNext-Bold.ttf
+        - asset: fonts/AvenirNext-BoldItalic.ttf
+          style: italic
+
+    - family: AvenirNext
+      fonts:
+        - asset: fonts/AvenirNext-Regular.ttf
+        - asset: fonts/AvenirNext-Italic.ttf
+          style: italic
+
+    - family: AvenirNextRegular
+      fonts:
+        - asset: fonts/AvenirNext-Regular.ttf
+        - asset: fonts/AvenirNext-Italic.ttf
+          style: italic
+
+
+    - family: AvenirNextUltraLight
+      fonts:
+        - asset: fonts/AvenirNext-UltraLight.ttf
+        - asset: fonts/AvenirNext-UltraLightItalic.ttf
+          style: italic
+
+    - family: AvenirNextMedium
+      fonts:
+        - asset: fonts/AvenirNext-Medium.ttf
+        - asset: fonts/AvenirNext-MediumItalic.ttf
+          style: italic
+
+    - family: AvenirNextCondensed
+      fonts:
+        - asset: fonts/AvenirNextCondensed-Heavy.ttf
+        - asset: fonts/AvenirNextCondensed-HeavyItalic.ttf
+        - asset: fonts/AvenirNextCondensed-Italic.ttf
+        - asset: fonts/AvenirNextCondensed-Regular.ttf
+        - asset: fonts/AvenirNextCondensed-UltraLight.ttf
+        - asset: fonts/AvenirNextCondensed-UltraLightItalic.ttf
+
+    - family: AvenirNextCondensedMedium
+      fonts:
+        - asset: fonts/AvenirNextCondensed-Medium.ttf
+        - asset: fonts/AvenirNextCondensed-MediumItalic.ttf
+          style: italic
+          
+    - family: AvenirNextCondensedDemiBold
+      fonts:
+        - asset: fonts/AvenirNextCondensedDemiBold.ttf
+        - asset: fonts/AvenirNextCondensedDemiBoldItalic.ttf
+          style: italic
+
+    - family: AvenirNextDemiBold
+      fonts:
+        - asset: fonts/AvenirNextDemiBold.ttf
+        - asset: fonts/AvenirNextDemiBoldItalic.ttf
+          style: italic
+    - family: AvenirNextCondensedBold
+      fonts:
+        - asset: fonts/AvenirNextCondensedBold.ttf
+        - asset: fonts/AvenirNextCondensedBoldItalic.ttf
+          style: italic
 
