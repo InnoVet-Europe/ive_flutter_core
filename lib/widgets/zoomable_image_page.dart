@@ -1,7 +1,7 @@
 import 'dart:io' as platform;
 
 import 'package:flutter/material.dart';
-
+import 'package:ive_flutter_core/text_styles.dart';
 import 'package:photo_view/photo_view.dart';
 
 class ZoomableImagePage extends StatelessWidget {
@@ -27,9 +27,7 @@ class ZoomableImagePage extends StatelessWidget {
       backgroundColor: appBarBackgroundColor,
       title: Text(
         pageTitle,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
+        style: ts_title,
       ),
     );
 

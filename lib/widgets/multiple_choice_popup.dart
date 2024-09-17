@@ -1,6 +1,7 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
+import 'package:ive_flutter_core/text_styles.dart';
 
 class MultipleChoicePopup extends StatefulWidget {
   const MultipleChoicePopup({required Key key, required this.title, required this.buttons, required this.cancelButtonTitle, required this.cancelButtonReturnValue
@@ -25,7 +26,10 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(widget.title),
+      title: Text(
+        widget.title,
+        style: ts_alertDialogTitle,
+      ),
       contentPadding: const EdgeInsets.fromLTRB(14, 20, 14, 10),
       content: Column(mainAxisSize: MainAxisSize.min, children: getButtons()),
     );
@@ -116,7 +120,10 @@ class _MultipleChoicePopupState extends State<MultipleChoicePopup> {
     buttons.add(
       ElevatedButton(
         style: ElevatedButton.styleFrom(backgroundColor: Colors.red, textStyle: const TextStyle(color: Colors.white)),
-        child: Text(widget.cancelButtonTitle),
+        child: Text(
+          widget.cancelButtonTitle,
+          style: ts_button,
+        ),
         onPressed: () {
           Navigator.of(context).pop(widget.cancelButtonReturnValue);
         },

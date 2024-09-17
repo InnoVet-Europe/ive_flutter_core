@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:core';
 
 import 'package:flutter/material.dart';
+import 'package:ive_flutter_core/text_styles.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class QrPopup extends StatefulWidget {
@@ -81,6 +82,7 @@ class _QrPopupState extends State<QrPopup> {
     return AlertDialog(
       title: Text(
         widget.dialogTitle,
+        style: ts_alertDialogTitle,
         textAlign: TextAlign.center,
       ),
       content: SizedBox(
@@ -101,13 +103,10 @@ class _QrPopupState extends State<QrPopup> {
             width: 100.0,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red, textStyle: const TextStyle(color: Colors.white)),
-              child: const Text('Done',
-                  style: TextStyle(
-                    fontFamily: 'AvenirNextDemiBold',
-                    fontStyle: FontStyle.normal,
-                    fontSize: 20.0,
-                    color: Colors.white,
-                  )),
+              child: Text(
+                'Done',
+                style: ts_button,
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
               },

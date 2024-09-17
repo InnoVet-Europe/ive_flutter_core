@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ive_flutter_core/text_styles.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class IveCoreUtilities {
@@ -87,7 +88,7 @@ class IveCoreUtilities {
             child: Text(
               text,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white, fontSize: 16.0, fontFamily: 'WorkSansMedium'),
+              style: ts_buttonLabelMedium,
             ),
           ),
           Container(
@@ -121,11 +122,11 @@ class IveCoreUtilities {
     FocusScope.of(context).requestFocus(FocusNode());
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(
-        value,
-        textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: fontSize.toDouble(), fontFamily: 'WorkSansSemiBold'),
-      ),
+      content: Text(value,
+          textAlign: TextAlign.center,
+          style: ts_title.copyWith(
+            fontSize: fontSize.toDouble(),
+          )),
       backgroundColor: backgroundColor,
       duration: Duration(seconds: durationInSeconds),
     ));
@@ -169,14 +170,14 @@ class IveCoreUtilities {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(title),
+          title: Text(title, style: ts_alertDialogTitle),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
                 Text(
                   body.replaceAll('~', '\r\n'),
                   textAlign: textAlign,
-                  style: const TextStyle(fontFamily: 'AvenirNextRegular', fontStyle: FontStyle.normal, fontSize: 16.0, height: 1.0),
+                  style: ts_alertDialogBody,
                 )
               ],
             ),
@@ -184,7 +185,10 @@ class IveCoreUtilities {
           actions: <Widget>[
             if (showCancelButton)
               TextButton(
-                child: Text(cancelButtonText),
+                child: Text(
+                  cancelButtonText,
+                  style: ts_button,
+                ),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
@@ -192,7 +196,10 @@ class IveCoreUtilities {
             else
               Container(),
             TextButton(
-              child: Text(buttonText),
+              child: Text(
+                buttonText,
+                style: ts_button,
+              ),
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
