@@ -2,7 +2,7 @@
 name: ive_flutter_core
 description: Core assets for InnoVet Europe Flutter projects
 # version: 1.2.6f
-version: 1.2.8
+version: 1.2.8a
 homepage: https://www.harriercentral.com/
 publish_to: none
 
@@ -26,7 +26,7 @@ dependency_overrides:
   
 dev_dependencies:
   build_runner: ^2.4.15
-  json_serializable: ^6.8.0
+  json_serializable: ^6.9.4
 
 # The following section is specific to Flutter.
 flutter:
