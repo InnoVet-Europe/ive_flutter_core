@@ -153,7 +153,7 @@
     },
     {
       "name": "freezed",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/freezed-3.0.4",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/freezed-3.0.6",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -431,13 +431,13 @@
       "name": "ive_flutter_core",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.7"
     }
   ],
-  "generated": "2025-03-30T20:22:27.355605Z",
+  "generated": "2025-04-05T19:06:22.313528Z",
   "generator": "pub",
-  "generatorVersion": "3.7.0",
+  "generatorVersion": "3.7.2",
   "flutterRoot": "file:///Users/jawDev/Development/flutter",
-  "flutterVersion": "3.29.0",
+  "flutterVersion": "3.29.2",
   "pubCache": "file:///Users/jawDev/.pub-cache"
 }
