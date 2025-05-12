@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RotationY extends StatelessWidget {
-  const RotationY({required Key key, required this.child, this.rotationY = 0}) : super(key: key);
+  const RotationY({required Key key, required this.child, this.rotationY = 0})
+    : super(key: key);
 
   //Degrees to rads constant
   static const double degrees2Radians = math.pi / 180;
@@ -14,16 +15,19 @@ class RotationY extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform(
-        alignment: FractionalOffset.center,
-        transform: Matrix4.identity()
-          ..setEntry(3, 2, 0.001) //These are magic numbers, just use them :)
-          ..rotateY(rotationY * degrees2Radians),
-        child: child);
+      alignment: FractionalOffset.center,
+      transform:
+          Matrix4.identity()
+            ..setEntry(3, 2, 0.001) //These are magic numbers, just use them :)
+            ..rotateY(rotationY * degrees2Radians),
+      child: child,
+    );
   }
 }
 
 class AnimatedBackground extends StatelessWidget {
-  const AnimatedBackground({required Key key, required this.child}) : super(key: key);
+  const AnimatedBackground({required Key key, required this.child})
+    : super(key: key);
 
   final Container child;
 
@@ -40,10 +44,15 @@ class AnimatedBackground extends StatelessWidget {
 }
 
 class FlippableBox extends StatelessWidget {
-  const FlippableBox({required Key key, this.isFlipped = false, required this.front, required this.back}) : super(key: key);
+  const FlippableBox({
+    required Key key,
+    this.isFlipped = false,
+    required this.front,
+    required this.back,
+  }) : super(key: key);
 
-  final Container front;
-  final Container back;
+  final Widget front;
+  final Widget back;
 
   final bool isFlipped;
   @override
@@ -53,12 +62,13 @@ class FlippableBox extends StatelessWidget {
       curve: Curves.easeOut,
       tween: Tween<double>(begin: 0.0, end: isFlipped ? 180.0 : 0.0),
       builder: (BuildContext context, double value, Widget? child) {
-        final Container content = value >= 90 ? back : front;
-        final Container offScreenContent = value >= 90 ? front : back;
+        final Widget content = value >= 90 ? back : front;
+        final Widget offScreenContent = value >= 90 ? front : back;
         return Stack(
           children: <Widget>[
             RotationY(
-              key: key!, // NOTE: Not sure why I have to force the non-nullability here, but it's raising an error otherwise (same for below)
+              key:
+                  key!, // NOTE: Not sure why I have to force the non-nullability here, but it's raising an error otherwise (same for below)
               rotationY: value,
               child: RotationY(
                 key: key!,
@@ -68,11 +78,7 @@ class FlippableBox extends StatelessWidget {
             ),
             // this ensures that we keep the original (front) widget in the tree so we preserve
             // it's state while it's out of view
-            SizedBox(
-              child: offScreenContent,
-              width: 0.0,
-              height: 0.0,
-            )
+            SizedBox(child: offScreenContent, width: 0.0, height: 0.0),
           ],
         );
       },

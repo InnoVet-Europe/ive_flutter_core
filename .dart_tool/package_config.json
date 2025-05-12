@@ -3,15 +3,15 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-80.0.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-82.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.5"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/analyzer-7.3.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/analyzer-7.4.5",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.5"
     },
     {
       "name": "args",
@@ -183,7 +183,7 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/http-1.3.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/http-1.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -225,7 +225,7 @@
     },
     {
       "name": "json_serializable",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/json_serializable-6.9.4",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/json_serializable-6.9.5",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -375,7 +375,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/test_api-0.7.4",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/test_api-0.7.5",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -411,13 +411,13 @@
     },
     {
       "name": "web_socket",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/web_socket-0.1.6",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/web_socket-1.0.1",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "web_socket_channel",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/web_socket_channel-3.0.2",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/web_socket_channel-3.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -434,10 +434,10 @@
       "languageVersion": "3.7"
     }
   ],
-  "generated": "2025-04-05T19:17:32.404418Z",
+  "generated": "2025-05-12T21:24:20.100879Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///Users/jawDev/Development/flutter",
-  "flutterVersion": "3.29.2",
+  "flutterVersion": "3.29.3",
   "pubCache": "file:///Users/jawDev/.pub-cache"
 }
