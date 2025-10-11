@@ -18,20 +18,33 @@ class IveCoreUtilities {
 
   static const int TIME_WINDOW = 30;
 
-  static String generateToken(String userId, String procName, {String paramString = ''}) {
-    final Duration difference = DateTime.now().toUtc().difference(DateTime.utc(1993, 7, 25, 15, 0, 0));
+  static String generateToken(
+    String userId,
+    String procName, {
+    String paramString = '',
+  }) {
+    final Duration difference = DateTime.now().toUtc().difference(
+      DateTime.utc(1993, 7, 25, 15, 0, 0),
+    );
     //final int timeBlocks = (difference.inSeconds / 5760).toInt();
     final int timeBlocks = difference.inSeconds ~/ TIME_WINDOW;
     if (paramString.isNotEmpty) {
       paramString = '#' + paramString;
     }
-    final String accessString = '${userId.toUpperCase()}#$procName#${timeBlocks.toString()}$paramString';
-    final List<int> bytes = utf8.encode(accessString.toUpperCase()); // data being hashed
+    final String accessString =
+        '${userId.toUpperCase()}#$procName#${timeBlocks.toString()}$paramString';
+    final List<int> bytes = utf8.encode(
+      accessString.toUpperCase(),
+    ); // data being hashed
     final Digest digest = sha256.convert(bytes);
     return '$digest'.toUpperCase();
   }
 
-  static String getFormattedMoney(num amount, num decimalPlaces, String currencySymbol) {
+  static String getFormattedMoney(
+    num amount,
+    num decimalPlaces,
+    String currencySymbol,
+  ) {
     String finalStr = '';
     String formatDecimals = '#####0.00';
     switch (decimalPlaces) {
@@ -64,21 +77,22 @@ class IveCoreUtilities {
 
   static Widget elegantDivider(String text, num topPadding, num bottomPadding) {
     return Padding(
-      padding: EdgeInsets.only(top: topPadding.toDouble(), bottom: bottomPadding.toDouble()),
+      padding: EdgeInsets.only(
+        top: topPadding.toDouble(),
+        bottom: bottomPadding.toDouble(),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  colors: <Color>[
-                    Colors.white10,
-                    Colors.white,
-                  ],
-                  begin: FractionalOffset(0.0, 0.0),
-                  end: FractionalOffset(1.0, 1.0),
-                  stops: <double>[0.0, 1.0],
-                  tileMode: TileMode.clamp),
+                colors: <Color>[Colors.white10, Colors.white],
+                begin: FractionalOffset(0.0, 0.0),
+                end: FractionalOffset(1.0, 1.0),
+                stops: <double>[0.0, 1.0],
+                tileMode: TileMode.clamp,
+              ),
             ),
             width: 100.0,
             height: 1.0,
@@ -94,14 +108,12 @@ class IveCoreUtilities {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                  colors: <Color>[
-                    Colors.white,
-                    Colors.white10,
-                  ],
-                  begin: FractionalOffset(0.0, 0.0),
-                  end: FractionalOffset(1.0, 1.0),
-                  stops: <double>[0.0, 1.0],
-                  tileMode: TileMode.clamp),
+                colors: <Color>[Colors.white, Colors.white10],
+                begin: FractionalOffset(0.0, 0.0),
+                end: FractionalOffset(1.0, 1.0),
+                stops: <double>[0.0, 1.0],
+                tileMode: TileMode.clamp,
+              ),
             ),
             width: 100.0,
             height: 1.0,
@@ -113,7 +125,6 @@ class IveCoreUtilities {
 
   static void showInSnackBar(
     BuildContext context,
-    GlobalKey<ScaffoldState> scaffoldKey,
     String value, {
     int durationInSeconds = 5,
     num fontSize = 16.0,
@@ -121,15 +132,17 @@ class IveCoreUtilities {
   }) {
     FocusScope.of(context).requestFocus(FocusNode());
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(value,
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          value,
           textAlign: TextAlign.center,
-          style: ts_title.copyWith(
-            fontSize: fontSize.toDouble(),
-          )),
-      backgroundColor: backgroundColor,
-      duration: Duration(seconds: durationInSeconds),
-    ));
+          style: ts_title.copyWith(fontSize: fontSize.toDouble()),
+        ),
+        backgroundColor: backgroundColor,
+        duration: Duration(seconds: durationInSeconds),
+      ),
+    );
   }
 
   static num unInt(num n) {
@@ -178,17 +191,14 @@ class IveCoreUtilities {
                   body.replaceAll('~', '\r\n'),
                   textAlign: textAlign,
                   style: ts_alertDialogBody,
-                )
+                ),
               ],
             ),
           ),
           actions: <Widget>[
             if (showCancelButton)
               TextButton(
-                child: Text(
-                  cancelButtonText,
-                  style: ts_button,
-                ),
+                child: Text(cancelButtonText, style: ts_button),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
@@ -196,10 +206,7 @@ class IveCoreUtilities {
             else
               Container(),
             TextButton(
-              child: Text(
-                buttonText,
-                style: ts_button,
-              ),
+              child: Text(buttonText, style: ts_button),
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
