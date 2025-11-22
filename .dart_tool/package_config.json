@@ -3,13 +3,13 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-90.0.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-91.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/analyzer-8.3.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/analyzer-8.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -33,7 +33,7 @@
     },
     {
       "name": "build",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/build-4.0.2",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/build-4.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -45,13 +45,13 @@
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/build_daemon-4.0.4",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/build_daemon-4.1.1",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/build_runner-2.9.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/build_runner-2.10.4",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -63,7 +63,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/built_value-8.12.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/built_value-8.12.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -75,9 +75,9 @@
     },
     {
       "name": "checked_yaml",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/checked_yaml-2.0.4",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.8"
     },
     {
       "name": "clock",
@@ -87,9 +87,9 @@
     },
     {
       "name": "code_builder",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/code_builder-4.10.1",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/code_builder-4.11.0",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "collection",
@@ -105,15 +105,15 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/crypto-3.0.6",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/crypto-3.0.7",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/dart_style-3.1.2",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/dart_style-3.1.3",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.9"
     },
     {
       "name": "file",
@@ -195,9 +195,9 @@
     },
     {
       "name": "json_serializable",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/json_serializable-6.11.1",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/json_serializable-6.11.3",
       "packageUri": "lib/",
-      "languageVersion": "3.8"
+      "languageVersion": "3.9"
     },
     {
       "name": "logging",
@@ -207,9 +207,9 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/matcher-0.12.17",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/matcher-0.12.18",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.7"
     },
     {
       "name": "material_color_utilities",
@@ -219,9 +219,9 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/meta-1.16.0",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/meta-1.17.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.5"
     },
     {
       "name": "mime",
@@ -249,9 +249,9 @@
     },
     {
       "name": "pool",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/pool-1.5.1",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/pool-1.5.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "pub_semver",
@@ -297,15 +297,15 @@
     },
     {
       "name": "source_gen",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/source_gen-4.0.2",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/source_gen-4.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "source_helper",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/source_helper-1.3.8",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/source_helper-1.3.9",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.9"
     },
     {
       "name": "source_span",
@@ -345,9 +345,9 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/test_api-0.7.5",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/test_api-0.7.8",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "typed_data",
@@ -363,7 +363,7 @@
     },
     {
       "name": "watcher",
-      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/watcher-1.1.1",
+      "rootUri": "file:///Users/jawDev/.pub-cache/hosted/pub.dev/watcher-1.1.4",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
@@ -399,8 +399,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.9.2",
+  "generatorVersion": "3.10.1",
   "flutterRoot": "file:///Users/jawDev/Development/flutter",
-  "flutterVersion": "3.35.6",
+  "flutterVersion": "3.38.3",
   "pubCache": "file:///Users/jawDev/.pub-cache"
 }
