@@ -6,7 +6,7 @@ part 'db_error_model.freezed.dart';
 part 'db_error_model.g.dart';
 
 @freezed
-class DBErrorModel with _$DBErrorModel {
+abstract class DBErrorModel with _$DBErrorModel {
   factory DBErrorModel(
       {required String errorId,
       required int errorType,
